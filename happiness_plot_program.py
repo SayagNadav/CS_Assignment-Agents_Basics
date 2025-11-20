@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 try:
-    df = pd.read_csv('query1/World-happiness-report-2024.csv')
+    df = pd.read_csv('World-happiness-report-2024.csv')
 except FileNotFoundError:
     print("The specified file was not found.")
     exit()
