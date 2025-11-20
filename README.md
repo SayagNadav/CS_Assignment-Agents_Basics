@@ -24,6 +24,7 @@ Environment variable management
 It is designed as an academic exercise, but fully functional.
 
 **🚀 Features**
+
 **🧠 Autonomous Agent Loop**
 
 **The agent:**
