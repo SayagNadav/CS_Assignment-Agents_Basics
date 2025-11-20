@@ -1,5 +1,5 @@
-📦 LLM Multi-Tool Basic Agent System (CS Assignment)
-
+**📦 LLM Multi-Tool Basic Agent System (CS Assignment)
+**
 This project implements a multi-step function-calling agent powered by an LLM.
 The agent dynamically selects and executes tools to solve complex queries involving text processing, CSV analysis, internet lookup and automatic Python program generation.
 
@@ -104,14 +104,23 @@ The agent expects input files (CSV, TXT, PNG, etc.) to exist locally in the same
 
 Folder structure example:
 project_root/
+
 │── hw3.py
+
 │── input.json
+
 │── students.txt
+
 │── grades.csv
+
 │── happiness.csv
+
 │── some_image.png
+
 │── requirements.txt
+
 │── README.md
+
 │── .env              # Not committed to GitHub
 
 Rules for input files:
