@@ -1,0 +1,9 @@
+{
+    "query_name": "WHR.txt",
+    "resources": [
+        {
+        "file_name": "World-happiness-report-2024.csv",
+        "description": "A csv file describing world happiness scores countries. the first line contains the columns (field names) of each following row. They are: 'Country name','Regional indicator','Ladder score','upperwhisker','lowerwhisker','Log GDP per capital', 'Social support','Healthy life expectancy','Freedom to make life choices','Generosity','Perceptions of corruption', 'Dystopia'"
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+Create a program to plot the average happiness score and the happiness scores of the top 5 and the lowest 5 countries in the file World-happiness-report-2024.csv.It should also plot the average happiness score of all countries in that file. The program should store the .png plot in a file and then terminate. Execute the program to generate the plot.
