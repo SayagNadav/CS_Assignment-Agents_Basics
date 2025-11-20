@@ -1,5 +1,5 @@
-**📦 LLM Multi-Tool Basic Agent System (CS Assignment)
-**
+**📦 LLM Multi-Tool Basic Agent System (CS Assignment)**
+
 This project implements a multi-step function-calling agent powered by an LLM.
 The agent dynamically selects and executes tools to solve complex queries involving text processing, CSV analysis, internet lookup and automatic Python program generation.
 
@@ -23,10 +23,10 @@ Environment variable management
 
 It is designed as an academic exercise, but fully functional.
 
-🚀 Features
-🧠 Autonomous Agent Loop
+**🚀 Features**
+**🧠 Autonomous Agent Loop**
 
-The agent:
+**The agent:**
 
 Loads a query.json containing the task and available resources
 
@@ -40,7 +40,7 @@ Feeds the results back into the reasoning loop
 
 Terminates when the query is solved or limits are reached
 
-🔧 Tools Implemented
+**🔧 Tools Implemented**
 1. extract_entities_from_file(file_name, entity_type)
 
 Extracts entities (cities, people, organizations, etc.) from unstructured text using the LLM.
@@ -75,7 +75,7 @@ Reads Python errors, reflects on them and regenerates a corrected script.
 
 Writes JSON, text, or other outputs.
 
-📋 Logging
+**📋 Logging**
 
 Each tool call logs:
 
