@@ -1,7 +1,8 @@
-**📦 LLM Multi-Tool Basic Agent System (CS Assignment)**
+**📦 LLM Multi-Tool Agent System (Assignment 3)**
 
 This project implements a multi-step function-calling agent powered by an LLM.
-The agent dynamically selects and executes tools to solve complex queries involving text processing, CSV analysis, internet lookup and automatic Python program generation.
+
+The agent dynamically selects and executes tools to solve complex queries involving text files, CSV analysis, internet lookup and automatic Python program generation.
 
 It demonstrates advanced skills in:
 
@@ -21,38 +22,38 @@ Structured logging
 
 Environment variable management
 
-It is designed as an academic exercise, but fully functional.
+**It is designed as an academic exercise, but fully functional.**
 
-**🚀 Features**
+**🚀 Main Feature**
 
 **🧠 Autonomous Agent Loop**
 
 **The agent:**
 
-Loads a query.json containing the task and available resources
+Loads a query.json containing the task and resources
 
-Initiates a conversation with an LLM
+Starts a conversation with an LLM
 
-Lets the LLM choose appropriate tools step-by-step
+Lets the LLM choose tools step-by-step
 
 Executes those tools
 
-Feeds the results back into the reasoning loop
+Appends outputs back into the reasoning loop
 
 Terminates when the query is solved or limits are reached
 
 **🔧 Tools Implemented**
 1. extract_entities_from_file(file_name, entity_type)
 
-Extracts entities (cities, people, organizations, etc.) from unstructured text using the LLM.
+Extracts entities (e.g., cities, people, organizations) from unstructured text using the LLM.
 
 2. internet_search_attribute(entity, attribute)
 
-Uses SerpAPI + LLM to extract structured JSON attributes from web search results.
+Performs an internet search (via SerpAPI) and uses the LLM to extract structured JSON results.
 
 3. gen_plot_prog(plot_request, input_file, columns, output_program_file, output_png)
 
-Generates a Python script that:
+Generates a complete Python script that:
 
 Reads a CSV
 
@@ -60,119 +61,121 @@ Computes requested metrics
 
 Generates a matplotlib plot
 
-Saves it as .png
+Saves it as a .png
 
-Avoids plt.show() so the program terminates cleanly
+Does not call plt.show(), ensuring the program terminates
 
 4. execute_Python_prog(program_file)
 
-Runs generated code and returns success or stderr output.
+Runs generated code and returns:
+
+"Program executed successfully"
+
+Or stderr errors
 
 5. debug_and_regenerate_prog(program_file, errors, …)
 
-Reads Python errors, reflects on them and regenerates a corrected script.
+Reads the error output, reflects on it and regenerates a corrected Python script.
 
 6. write_file(content, filename)
 
-Writes JSON, text, or other outputs.
+Writes JSON or other outputs as required by each query.
 
 **📋 Logging**
 
-Each tool call logs:
+Every tool call logs:
 
-Entering tool
+Entry
 
-All parameters (truncated to 50 chars)
+All parameters (truncated)
 
-Exiting tool
+Exit
 
-A log file is created per query:
+Each query generates:
 
 <query_name>.log
 
-📁 Repository Structure
-hw3.py              # Full agent & tools implementation
-requirements.txt    # Python main dependencies
-README.md           # This documentation
+**📁 Repository Structure**
+
+hw3.py              # Full agent + tools implementation
+
+requirements.txt    # Python dependencies
+
+README.md           # Project documentation (this file)
 
 
-⚠️ Note:
-The original assignment description PDF is intentionally not included to avoid redistribution of restricted material.
+**⚠️ Note:**
 
-📂 Where to Place Input Files (Important)
+The original assignment PDF is not included in this repository to avoid redistribution of restricted materials.
 
-The agent expects input files (CSV, TXT, PNG, etc.) to exist locally in the same folder where you run hw3.py and they must be referenced inside your input.json.
+**🔐 Environment Variables**
 
-Folder structure example:
-project_root/
-
-│── hw3.py
-
-│── input.json
-
-│── students.txt
-
-│── grades.csv
-
-│── happiness.csv
-
-│── some_image.png
-
-│── requirements.txt
-
-│── README.md
-
-│── .env              # Not committed to GitHub
-
-Rules for input files:
-
-All input resources listed in input.json must physically exist in the same directory (or a subfolder you specify).
-
-If your input.json uses paths like "query1/World-happiness-report.csv", you must create that folder locally:
-
-project_root/
-    query1/
-        World-happiness-report.csv
-
-
-The program does not download files — it only uses local ones.
-
-The agent reads the paths exactly as written in input.json.
-
-This ensures the agent can correctly open and process every resource file.
-
-🔐 Environment Variables
-
-Create a .env file locally (never commit it):
+Create .env locally in your machine (NOT committed to GitHub):
 
 CLASS_OPENAI_API_KEY=your_key
+
 SUBSCRIPTION_OPENAI_ENDPOINT_4o=your_endpoint
+
 SERPAPI_API_KEY=your_serpapi_key
 
 
-Loaded automatically via python-dotenv.
+The application automatically loads them via python-dotenv.
 
-▶️ Running the Agent
+**▶️ Running the Agent**
 
-Prepare an input.json file describing:
+Prepare an input.json in the working dir describing:
 
 The query file
 
-The resource files the agent is allowed to use
+Available resources (CSV, TXT, PNG, etc.)
 
 Run:
 
 python hw3.py
 
 
-Depending on the query, the agent may produce:
+Outputs may include:
 
 JSON files
 
 PNG plot files
 
-Auto-generated Python programs
+Generated Python programs
 
-Logs (*.log)
+Logs
 
-These are saved directly to the working directory (or subfolders if specified in your query).
+**🧪 Capabilities Demonstrated**
+
+This project shows proficiency in:
+
+Autonomous reasoning loops
+
+Multi-tool function calling
+
+Error-aware code generation
+
+Plotting and data aggregation
+
+Internet search parsing
+
+File I/O automation
+
+Environment and secrets handling
+
+Iterative agent design
+
+Structured logging practices
+
+This is the type of system used for:
+
+Data question-answering agents
+
+Automated analysis bots
+
+AI-enhanced ETL pipelines
+
+Code generation / debugging assistants
+
+**👤 Author**
+
+Nadav Sayag
